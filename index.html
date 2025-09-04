@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1BT6G85SX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-T1BT6G85SX');
+  </script>
+
+  <script>
+    // Call Supabase Edge Function to log
+    fetch("https://idwnqywjcgmsxghdjuxu.functions.supabase.co/log-open?doc=Final_Notice")
+      .catch(err => console.error("Tracking failed:", err))
+      .finally(() => {
+        // Fire a custom GA event (optional)
+        gtag('event', 'pdf_opened', {
+          'event_category': 'Documents',
+          'event_label': 'Final Notice',
+          'value': 1
+        });
+
+        // Redirect to actual PDF
+        window.location.href = "https://idwnqywjcgmsxghdjuxu.supabase.co/storage/v1/object/public/PixelStorage/Final_Notice_for_Outstanding_Payment_addressed_to_Yusanet_Digital(Unpaid_UX_Design_Work%20_for_MaBoutiqueYoga.fr).pdf";
+      });
+  </script>
+</head>
+<body>
+  <p>Redirecting to document…</p>
+</body>
+</html>
