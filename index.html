@@ -13,18 +13,18 @@
     gtag('config', 'G-T1BT6G85SX');
   </script>
 
-  <script>
-    // Call Supabase Edge Function to log
-    fetch("https://idwnqywjcgmsxghdjuxu.functions.supabase.co/log-open?doc=Final_Notice")
-      .catch(err => console.error("Tracking failed:", err));
+<script>
+  fetch("https://idwnqywjcgmsxghdjuxu.functions.supabase.co/log-open?doc=Final_Notice", {
+    headers: {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlkd25xeXdqY2dtc3hnaGRqdXh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4MDgwNzAsImV4cCI6MjA3MjM4NDA3MH0.5PpiqLWKkVUy5busBgrFJZD8s5_Cv-Jlv1a0oT2Re6M"
+    }
+  })
+  .catch(err => console.error("Tracking failed:", err))
+  .finally(() => {
+    window.location.href = "https://idwnqywjcgmsxghdjuxu.supabase.co/storage/v1/object/public/PixelStorage/Final_Notice_for_Outstanding_Payment_addressed_to_Yusanet_Digital(Unpaid_UX_Design_Work%20_for_MaBoutiqueYoga.fr).pdf";
+  });
+</script>
 
-    // Fire a GA event
-    gtag('event', 'pdf_opened', {
-      'event_category': 'Documents',
-      'event_label': 'Final Notice',
-      'value': 1
-    });
-  </script>
 
   <style>
     body, html {
